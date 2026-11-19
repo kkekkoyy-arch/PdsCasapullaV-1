@@ -1,0 +1,13 @@
+QCS — Demo non ufficiale
+
+Questa build è una demo statica pubblica. I dati inseriti sono conservati
+solo nel browser del dispositivo e non vengono condivisi tra utenti.
+Non inserire dati personali, credenziali reali o informazioni operative.
+
+Pubblicazione:
+  GitHub Pages pubblica i file statici della cartella principale.
+  La demo non configura un backend e non abilita la sincronizzazione remota.
+
+Per un uso operativo servono autenticazione e autorizzazioni lato server,
+un database con accesso controllato e una revisione di sicurezza prima
+di inserire dati reali.
