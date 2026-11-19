@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08233b">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), usb=()">
+  <title>QCS — Controllo operativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="login" id="login">
+    <div class="login-brand">
+      <div class="login-mark" aria-hidden="true">
+        <img src="stemma-polizia.png?v=2" alt="">
+      </div>
+      <div>
+        <h1>QUESTURA<br>DI CASAPULLA</h1>
+      </div>
+    </div>
+
+    <div class="login-panel">
+      <div class="login-card">
+        <div class="login-heading">
+          <p class="eyebrow dark">Accesso riservato</p>
+          <h2>Benvenuto</h2>
+          <p>Inserisci le credenziali.</p>
+        </div>
+        <p class="demo-notice"><strong>DEMO NON UFFICIALE</strong> · Non inserire dati personali o operativi reali. I dati restano nel browser.</p>
+        <div class="field-grid">
+          <label for="mat">Matricola
+            <input id="mat" type="text" autocomplete="username" placeholder="PS-00" maxlength="6">
+          </label>
+          <label for="nome">Nome e cognome
+            <input id="nome" type="text" autocomplete="name" placeholder="Mario Rossi">
+          </label>
+          <label for="pw">Password
+            <input id="pw" type="password" autocomplete="current-password" placeholder="••••••••">
+          </label>
+        </div>
+        <label class="remember"><input id="rm" type="checkbox"> Ricorda questo dispositivo</label>
+        <button class="login-button" id="go" type="button">
+          Accedi
+          <span aria-hidden="true">→</span>
+        </button>
+        <button class="demo-button" id="demo" type="button">Avvia demo (dati locali)</button>
+        <div class="err" id="err" role="alert"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app hide" id="app">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="mini-mark" aria-hidden="true">
+          <img src="stemma-polizia.png?v=2" alt="">
+        </div>
+        <div><strong>QCS</strong><span>Controllo operativo</span></div>
+      </div>
+      <nav id="nav" aria-label="Sezioni"></nav>
+      <div class="sidebar-footer">
+        <button class="icon-button" id="sv" type="button" title="Stato sistema">SV</button>
+        <button class="icon-button" id="end" type="button" title="Fine servizio">■</button>
+        <button class="icon-button" id="out" type="button" title="Esci">↪</button>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="mobile-menu" type="button" aria-label="Apri menu">☰</button>
+        <div>
+          <p class="topbar-kicker">Area operativa</p>
+          <h1 id="page-title">Casapulla</h1>
+        </div>
+        <div class="topbar-actions">
+          <div class="timer" id="tm">00:00:00</div>
+          <div class="who" id="who"></div>
+        </div>
+      </header>
+      <main id="main"></main>
+    </div>
+  </section>
+
+  <div class="susp hide" id="susp" role="alert"></div>
+  <div class="toast-layer" id="toast-layer" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="security.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
